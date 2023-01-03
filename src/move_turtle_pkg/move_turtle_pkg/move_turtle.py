@@ -23,7 +23,7 @@ class Move_turtle(Node):
 
     self.move_turtle1.publish(msg)
     self.get_logger().info(f'Published message: {msg.linear}, {msg.angular}')
-    self.velocity += 0.004
+    self.velocity += 1
 
 def main(args=None):
   rclpy.init(args=args)
