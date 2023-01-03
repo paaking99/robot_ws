@@ -103,3 +103,8 @@
 
 *  Saas 연습 google slide  : https://docs.google.com/presentation/d/1jwksntFzRzFbpEtHJCzOahT5loVWIPO-PtTMm4BnxtY/edit?usp=sharing
 
+* 구동: ros2 run move_turtle_pkg move_turtle
+* 네임스페이스:
+	* ros2 run turtlesim turtlesim_node --ros-args -r __ns:=/ns1
+	* ros2 run move_turtle_pkg move_turtle --ros-args -r __ns:=/ns1
+
