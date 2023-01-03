@@ -102,9 +102,10 @@
 
 
 *  Saas 연습 google slide  : https://docs.google.com/presentation/d/1jwksntFzRzFbpEtHJCzOahT5loVWIPO-PtTMm4BnxtY/edit?usp=sharing
-
+* 환경 만들기: ros2 run turtlesim turtlesim_node
 * 구동: ros2 run move_turtle_pkg move_turtle
 * 네임스페이스:
 	* ros2 run turtlesim turtlesim_node --ros-args -r __ns:=/ns1
 	* ros2 run move_turtle_pkg move_turtle --ros-args -r __ns:=/ns1
+	* 거북이 2마리 만들기: ros2 service call /spawn turtlesim/srv/Spawn "{x: 5.5 , y: 7.0 , theta : 1.5, name: 'turtle2'}"
 
