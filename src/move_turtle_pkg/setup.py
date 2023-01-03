@@ -13,15 +13,15 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='aa',
-    maintainer_email='freshmea@naver.com',
+    maintainer='user',
+    maintainer_email='timtkddn@gmail.com',
     description='TODO: Package description',
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'hp = move_turtle_pkg.move_turtle:main',
-            'ss = move_turtle_pkg.string_sub:main'
+            'move_turtle = move_turtle_pkg.move_turtle:main'
+            'move_turtle2 = move_turtle_pkg.move_turtle2:main'
         ],
     },
 )
