@@ -7,6 +7,7 @@ class Move_turtle(Node):
   def __init__(self):
     super().__init__('move_turtle')
     self.qos_profile = QoSProfile(depth = 10)
+    self.move_turtle1 = self.create_publisher(Twist, 'turtle1/cmd_vel', self.qos_profile)
     self.move_turtle2 = self.create_publisher(Twist, 'turtle2/cmd_vel', self.qos_profile)
     self.timer = self.create_timer(0.1, self.turtle_move)
     self.velocity = 0.0
@@ -21,9 +22,23 @@ class Move_turtle(Node):
     msg.angular.y = 0.0
     msg.angular.z = 1.0
 
-    self.move_turtle2.publish(msg)
+    self.move_turtle1.publish(msg)
     self.get_logger().info(f'Published message: {msg.linear}, {msg.angular}')
     self.velocity += 0.01
+
+  def turtle_move2(self):
+    msg = Twist()
+    msg.linear.x = self.velocity
+    msg.linear.y = 0.0
+    msg.linear.z = 0.0
+
+    msg.angular.x = 0.0
+    msg.angular.y = 0.0
+    msg.angular.z = 1.0
+
+    self.move_turtle2.publish(msg)
+    self.get_logger().info(f'Published message: {msg.linear}, {msg.angular}')
+    self.velocity -= 0.02
 
 def main(args=None):
   rclpy.init(args=args)
